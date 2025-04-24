@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yue's Personal Webpage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .nav-link {
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #3b82f6;
+    }
+    .social-link {
+      transition: color 0.3s;
+    }
+    .social-link:hover {
+      color: #3b82f6;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .timeline-item:first-child::before {
+      background-color: #3b82f6;
+    }
+    .timeline-item:not(:first-child)::before {
+      background-color: transparent;
+      border: 2px solid #3b82f6;
+    }
+    .about-me-paragraph {
+      max-width: prose;
+      line-height: relaxed;
+    }
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      transition: all 0.2s;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <span class="text-xl font-bold text-gray-800">Yue Zhang</span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#home" class="nav-link text-gray-600 hover:text-blue-500">Home</a>
+          <a href="#experience" class="nav-link text-gray-600 hover:text-blue-500">Experience</a>
+          <a href="#publications" class="nav-link text-gray-600 hover:text-blue-500">Publications</a>
+          <a href="#patents" class="nav-link text-gray-600 hover:text-blue-500">Patents</a>
+          <a href="#awards" class="nav-link text-gray-600 hover:text-blue-500">Awards</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-50">
+    <div class="section flex flex-col md:flex-row gap-10 md:items-center">
+      <div class="md:w-36 flex-shrink-0 text-center md:mr-8">
+        <img src="assets/profile.png" alt="Yue's Profile Picture" class="profile-img mx-auto mb-4">
+        <div class="flex justify-center gap-3">
+          <a href="https://www.linkedin.com/in/yue-z/" class="social-link text-gray-600 hover:text-blue-500" target="_blank">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=qGXqNDAAAAAJ&hl=zh-CN" class="social-link text-gray-600 hover:text-blue-500" target="_blank">
+            <i class="fas fa-graduation-cap fa-lg"></i>
+          </a>
+        </div>
+      </div>
+      <div class="flex-1">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Yue Zhang</h1>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
+        <p class="text-gray-600 mb-4 about-me-paragraph">
+          I am a Machine Leanring Engineer at VISA, focus on real-time machine leanring inference system optimizaiton and advanced fraud and authorization model onboarding. Before join VISA, I earned my Ph.D. in Electrical Engineering and Computer Science at University of California, Merced with a focus on machine leanring augmented ubiquitous computing system. I obtained my M.S. and B.S. degree in Electronic Engineering from Tsinghua University in 2019 and 2016, respectively. Please feel free to contact me via email (yzhang58 at ucmerced dot edu) if you want to connect.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="md:w-1/2">
+            <h3 class="text-xl font-medium text-gray-700 mb-2">Interest</h3>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+              <li>Large Language Model reasoning</li>
+              <li>Mulitmodal representation learning</li>
+            </ul>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-xl font-medium text-gray-700 mb-2">Education</h3>
+            <ul class="list-none space-y-2 text-gray-600">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-gray-600"></i>
+                PhD, Electrical Engineering and Computer Science, UC Merced, 2019 - 2024
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-gray-600"></i>
+                MS, Electronic Engineering, Tsinghua, 2016 - 2019
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-gray-600"></i>
+                BS, Electronic Engineering, Tsinghua, 2012 - 2016
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="bg-white">
+    <div class="section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Experience</h2>
+      <ul class="timeline list-none">
+        <li class="timeline-item">
+          <strong>Machline Learning Engineer, VISA</strong><br>
+          Aug 2024 - Present<br>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Machine learning enabled real-time fraud detection and payment authorization models development and onboarding.
+            <li>Machine learning inference infrastrucutre optimization for large scaly and real time service system.</li>
+          </ul>
+        </li>
+        <li class="timeline-item">
+          <strong>Ph.D. Researcher, University of California Merced</strong><br>
+          August 2019 - August 2024<br>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Machine learning augmented multimodal occupant sensing system.</li>
+            <li>Multimodal representation learning in time series data for cross-modal association.</li>
+            <li>Contrastive learning enhanced image generation from imbalanced dataset.</li>
+          </ul>
+        </li>
+        <!-- Add more experiences as needed -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Research Section
+  <section id="research" class="bg-gray-50">
+    <div class="section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Research</h2>
+      <p class="text-gray-600 mb-4">
+        My research focuses on [briefly describe your research area, e.g., innovative applications of machine learning in cyber-physical systems, vibration sensing, or big data analytics]. Below are some highlights of my work:
+      </p>
+      <ul class="list-disc list-inside text-gray-600 space-y-2">
+        <li>Project 1: [Brief description, e.g., Developed a vibration sensing system using LEGO structures for occupant monitoring.]</li>
+        <li>Project 2: [Brief description, e.g., Explored power-line networks for device-free indoor localization.]</li>
+        <li>Project 3: [Add more projects or customize as needed.]</li>
+      </ul>
+    </div>
+  </section> -->
+
+  <!-- Publications Section -->
+  <section id="publications" class="bg-gray-50">
+    <div class="section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Publications</h2>
+      <ul class="list-none space-y-6">
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Are large language models capable of causal reasoning for sensing data analysis?]</strong><br>
+              <span class="font-medium text-gray-700">Zhizhang Hu, Yue Zhang, Ryan Rossi, Tong Yu, Sungchul Kim, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The Workshop on Edge and Mobile Foundation Models</em>, 2024</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3662006.3662064" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Are large language models capable of causal reasoning for sensing data analysis?]</strong><br>
+              <span class="font-medium text-gray-700">Zhizhang Hu, Yue Zhang, Ryan Rossi, Tong Yu, Sungchul Kim, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The Workshop on Edge and Mobile Foundation Models</em>, 2024</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3662006.3662064" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Poster: PrivaSee: Augmented Reality-Enabled Privacy Perception Visualization for Internet of Things]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>*, Shangjie Du*, Jiqing Wen, Robert Likamwa, Shiwei Fang, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 22nd Annual International Conference on Mobile Systems, Applications and Services</em> (MobiSys ’24), 2024</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3643832.3661426" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Poster Runner-up @ MobiSys 2024
+                </span>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Ioteeth: Intra-oral teeth sensing system for dental occlusal diseases recognition]</strong><br>
+              <span class="font-medium text-gray-700">Zhizhang Hu, Amirmohammad Radmehr, <strong>Yue Zhang</strong>, Shijia Pan, Phuc Nguyen</span>,
+              <span class="text-gray-600"><em>The ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies</em> (UbiComp ’24), 2024</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="http://dl.acm.org/doi/pdf/10.1145/3643516" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[KAP: Kinetic Augmented Pill Bottle for Vibration-Based Medication Interaction Recognition]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>*,Dong Yoon Lee*, Yihong Li*, Hao-Chuan Wang, Alyssa Mae Weakley, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 25th International Workshop on Mobile Computing Systems and Applications</em> (HotMobile ’24), 2024</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3638550.3641140" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Poster: LEVO: LEGO® Bricks Enhanced Single-Point Vibration Sensing for Occupant Monitoring]</strong><br>
+              <span class="font-medium text-gray-700">Yue Zhang, Shikha Patel, Dong Yoon Lee, Paolo Celli, Amelie Bonde, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 21st ACM Conference on Embedded Networked Sensor Systems </em> (SenSys ’23), 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3625687.3628385" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Poster @ SenSys 2023
+                </span>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Demo: PA-Pill: Physical Augmented Pill Bottle for Vibration-Based Medication Intake Monitoring]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>*, Yihong Li*, Hao-Chuan Wang, Alyssa Mae Weakley, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 21st ACM Conference on Embedded Networked Sensor Systems </em>(SenSys ’23)], 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3625687.3628388" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[CMA: Cross-Modal Association Between Wearable and Structural Vibration Signal Segments for Indoor Occupant Sensing]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Zhizhang Hu, Uri Berger, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 22nd International Conference on Information Processing in Sensor Networks</em> (IPSN ’23), 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3583120.3586960" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Poster: Integrating on-and off-body sensing for young adults failure to launch (ftl) behavior profiling]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Zhizhang Hu, Uri Berger, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 22nd International Conference on Information Processing in Sensor Networks</em> (IPSN ’23), 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3583120.3586960" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Poster Runner-up @ IPSN 2023
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Demo: Single-Point Vibration Sensing for Product Pickup/Put-Down Detection in Autonomous Retails]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Carlos Ruiz, Shubham Rohal, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 24th International Workshop on Mobile Computing Systems and Applications</em> (HotMobile ’23), 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://d1wqtxts1xzle7.cloudfront.net/107146628/3572864-libre.pdf?1699114157=&response-content-disposition=inline%3B+filename%3DSingle_Point_Vibration_Sensing_for_Produ.pdf&Expires=1745637227&Signature=LwBtOxTv0y35CBckqVU3K4IaTUwbfqAie-DefhacGXFHc0V-cyBVkK1vPinZDaPa3sWZoDit6Sya4hy~-fU5iV3RaF3m81xRjfOwprxFKH3y~Zv7RhpqkdFGJKbFjUTfVuTrJ1g22DlMpmMuaTgcyeILZzZlf3Ne5wsSfoiJFi3fLnBeaUL2SrOPLE4plfVb~N49Gb5bwet5pMTLv1fUnP6cZwN68pG-em-GfvJ99Yb1RRV~y310UDL-2wBfGE26o94xLQVm4~zm9AsT8GCvq2Di1OUNNGgo7owVtUfLCPp4KwJxxU4~lJxpOd8Gw7wfJ9wa1v4o3yWjGFPC~HlxBw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[CPA: Cyber-Physical Augmentation for Vibration Sensing in Autonomous Retails]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Carlos Ruiz, Shubham Rohal, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 24th International Workshop on Mobile Computing Systems and Applications</em> (HotMobile ’23), 2023</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3572864.3580328" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[DaQual: Data Quality Assessment for Tree Trunk Relative Water Content Sensors in a Pomegranate Orchard]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Abdias Benitez, Reza Ehsani, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 20th ACM Conference on Embedded Networked
+                Sensor Systems</em> (SenSys ’22 AgSys Workshop), 2022</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3560905.3568415" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Demo: MOOCA: Muira-Ori Origami-Based Configurable Shelf-Liner for Autonomous Retail]</strong><br>
+              <span class="font-medium text-gray-700">Shubham Rohal, Carlos Ruiz, <strong>Yue Zhang</strong>, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 20th ACM Conference on Embedded Networked
+                Sensor Systems</em> (SenSys ’22), 2022</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3560905.3568061" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Demo @ SenSys 2022
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[VMA: Domain Variance- and Modality-Aware Model Transfer for Fine-Grained Occupant Activity Recognition]</strong><br>
+              <span class="font-medium text-gray-700">Zhizhang Hu, <strong>Yue Zhang</strong>, Tong Yu, Shijia Pan</span>,
+              <span class="text-gray-600"><em>21st ACM/IEEE International Conference on Information Processing in Sensor Networks</em> (IPSN ’22), 2022</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://ieeexplore.ieee.org/document/9826076" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Poster: Sedentary Posture Muscle Monitoring via Active Vibratory Sensing]</strong><br>
+              <span class="font-medium text-gray-700">Shreya Shriram, Shubham Rohal, Zhizhang Hu, <strong>Yue Zhang</strong>, Phuc Nguyen, Shijia Pan</span>,
+              <span class="text-gray-600"><em>21st ACM/IEEE International Conference on Information Processing in Sensor Networks</em> (IPSN ’22), 2022</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9826100" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Poster @ IPSN 2022
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[AutoQual: Task-oriented Structural Vibration Sensing Quality Assessment Leveraging Co-located Mobile Sensing Context]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Zhizhang Hu, Susu Xu, Shijia Pan</span>,
+              <span class="text-gray-600"><em>CCF Transactions on Pervasive Computing and Interaction</em>, 2021</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://link.springer.com/content/pdf/10.1007/s42486-021-00073-3.pdf" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[A Signal Quality Assessment Metrics for Vibration-based Human Sensing Data Acquisition]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Lin Zhang, Hae Young NoH, Pei Zhang, Shijia Pan</span>,
+              <span class="text-gray-600"><em>The 2nd Workshop on Data Acquisition To Analysis</em> (SenSys ’19 DATA Workshop), 2019</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/10.1145/3359427.3361918" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[P-Loc a device-free indoor localization system utilizing building power-line network]</strong><br>
+              <span class="font-medium text-gray-700">Tian Zhou, <strong>Yue Zhang</strong>, Xinlei Chen, Khaild M Mosalam, Hae Young Noh, Pei Zhang, Lin Zhang</span>,
+              <span class="text-gray-600"><em>The 2019 ACM International Symposium on Wearable Computers</em> (UbiComp ’19 Workshop), 2019</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3341162.3349328" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Demo: Real-Time Emotion Detection via E-See]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Weixi Gu, Fei Ma, Khalid Mosalam, Lin Zhang, Shiguang Ni</span>,
+              <span class="text-gray-600"><em>The 16th ACM Conference on Embedded Networked Sensor Systems</em> (SenSys ’18), 2018</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="http://dl.acm.org/doi/abs/10.1145/3274783.3275213" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Demo: Vibration-Based Occupant Activity Level Monitoring System]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Shijia Pan, Jonathon Fagert, Mostafa Mirshekari, Hae Young NoH, Pei Zhang, Lin Zhang</span>,
+              <span class="text-gray-600"><em>The 16th ACM Conference on Embedded Networked Sensor Systems</em> (SenSys ’18), 2018</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3274783.3275177" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Occupant-induced Office Floor Vibration Dataset for Activity Level Monitoring]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Shijia Pan, Jonathon Fagert, Mostafa Mirshekari, Hae Young NoH, Pei Zhang, Lin Zhang</span>,
+              <span class="text-gray-600"><em>The First Workshop on Data Acquisition To Analysis
+              </em> (SenSys ’18 DATA Workshop), 2018</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://doi.org/10.1145/3277868.327787" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Occupant activity level estimation using floor vibration]</strong><br>
+              <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Shijia Pan, Jonathon Fagert, Mostafa Mirshekari, Hae Young NoH, Pei Zhang, Lin Zhang</span>,
+              <span class="text-gray-600"><em>the 2018 ACM international joint conference and 2018 international symposium on pervasive and ubiquitous computing and wearable computers</em> (UbiComp ’18 Workshop), 2018</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://dl.acm.org/doi/10.1145/3267305.3274184" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-2">
+            <i class="fas fa-file-alt text-lg text-gray-600"></i>
+            <div>
+              <strong class="text-lg font-semibold text-gray-700">[Poster: E-Loc: Indoor localization through building electric wiring]</strong><br>
+              <span class="font-medium text-gray-700">Tian Zhou, <strong>Yue Zhang</strong>, Pei Zhang, Lin Zhang</span>,
+              <span class="text-gray-600"><em>the 16th ACM/IEEE International Conference on Information Processing in Sensor Networks</em> (IPSN ’17), 2017</span><br>
+              <div class="flex gap-3 mt-2">
+                <a href="https://ieeexplore.ieee.org/document/7944823" class="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 border border-transparent hover:border-blue-500 flex items-center gap-1">
+                  <i class="fas fa-file-pdf text-sm"></i> PDF
+                </a>
+                <span class="award-badge bg-green-100 text-green-800 ml-2">
+                  <i class="fas fa-award mr-1"></i>Best Poster @ IPSN 2017
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+<!-- Publications Section -->
+<section id="patents" class="bg-gray-50">
+  <div class="section">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Patents</h2>
+    <ul class="list-none space-y-6">
+
+      <li class="bg-white rounded-lg p-4 shadow-sm pt-6 border-t border-gray-200">
+        <div class="flex items-start gap-2">
+          <i class="fas fa-book text-lg text-gray-600"></i>
+          <div>
+            <strong class="text-lg font-semibold text-gray-700">[Programmable smart-sensing shelf liner apparatus for autonomous retail]</strong><br>
+            <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Carlos Ruiz Shijia Pan, Shubham Rohal</span>,
+            <span class="text-gray-600">US20240138597A1, 2024</span><br>
+          </div>
+        </div>
+      </li>
+
+      <li class="bg-white rounded-lg p-4 shadow-sm pt-6 border-t border-gray-200">
+        <div class="flex items-start gap-2">
+          <i class="fas fa-book text-lg text-gray-600"></i>
+          <div>
+            <strong class="text-lg font-semibold text-gray-700">[Cross-modal association between wearable and structural vibration signal segments for indoor occupant sensing]</strong><br>
+            <span class="font-medium text-gray-700"><strong>Yue Zhang</strong>, Zhizhang Hu Shijia Pan</span>,
+            <span class="text-gray-600">US20240138597A1, 2024</span><br>
+          </div>
+        </div>
+      </li>
+
+      <li class="bg-white rounded-lg p-4 shadow-sm pt-6 border-t border-gray-200">
+        <div class="flex items-start gap-2">
+          <i class="fas fa-book text-lg text-gray-600"></i>
+          <div>
+            <strong class="text-lg font-semibold text-gray-700">[Indoor power line positioning system and method]</strong><br>
+            <span class="font-medium text-gray-700">Zhang Lin, <strong>Yue Zhang</strong>, Zhou Tian, ​​Zhou Qiang, Chen Xinlei, Zhang Pei</span>,
+            <span class="text-gray-600">CN107942286A, 2018</span><br>
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+  <!-- Awards Section -->
+  <section id="awards" class="bg-gray-50">
+    <div class="section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Awards</h2>
+      <ul class="list-none space-y-2">
+
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Best Poster Runner-up Award, MobiSys, 2024
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-medal text-lg text-gray-600"></i>
+          Graduate Dean's Dissertation Fellowship, UC Merced, 2024
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Best Poster award, SenSys, 2023
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Best Poster Runner-up Award, IPSN, 2023
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-medal text-lg text-gray-600"></i>
+          SIGMOBILE Travel Award, HotMobile, 2023
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Best Demo Award, SenSys, 2022
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-medal text-lg text-gray-600"></i>
+          EECS Bobcat Fellowship, University of California, Merced, 2022
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Best Poster Award, IPSN, 2017, 2022
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-trophy text-lg text-gray-600"></i>
+          Third Place Award of Autocheckout Competition, CPS-IoT Week, 2020
+        </li>
+        <li class="flex items-center gap-2 text-gray-600">
+          <i class="fas fa-medal text-lg text-gray-600"></i>
+          China National Scholarship, Tsinghua University, 2019
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex justify-center gap-4">
+        <!-- <a href="[Your GitHub URL]" class="hover:text-blue-400">GitHub</a> -->
+        <a href="https://www.linkedin.com/in/yue-z/" class="hover:text-blue-400">LinkedIn</a>
+        <!-- Add more social links as needed -->
+      </div>
+      <p class="mt-4 text-sm">© 2025 Yue Zhang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
