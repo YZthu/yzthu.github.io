@@ -48,6 +48,25 @@
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
       border-width: 4px;
     }
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 99;
+      background-color: var(--primary);
+      color: white;
+      cursor: pointer;
+      padding: 0.75rem;
+      border-radius: 9999px;
+      transition: background-color 0.3s, opacity 0.3s;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+
+    #backToTop:hover {
+      background-color: var(--secondary);
+    }
   </style>
 </head>
 
@@ -211,10 +230,9 @@
             Visa • Aug 2024 - Jun 2025
           </p>
           <ul class="list-disc space-y-2 pl-6 text-gray-600">
-            <li>Machine learning-enabled real-time fraud detection and payment authorization models development and
-              onboarding.</li>
-            <li>Machine learning inference infrastructure optimization for large-scale and real-time service systems.
-            </li>
+            <li>Developed and onboarded machine learning-enabled real-time fraud detection and payment authorization
+              models.</li>
+            <li>Optimized machine learning inference infrastructure for large-scale real-time service systems.</li>
           </ul>
         </div>
 
@@ -226,9 +244,9 @@
             UC Merced • Aug 2019 - Aug 2024
           </p>
           <ul class="list-disc space-y-2 pl-6 text-gray-600">
-            <li>Machine learning augmented multimodal occupant sensing system.</li>
+            <li>Developed a machine learning-augmented multimodal occupant sensing system.</li>
             <li>Multimodal representation learning in time series data for cross-modal association.</li>
-            <li>Contrastive learning enhanced image generation from imbalanced dataset.</li>
+            <li>Enhanced image generation from imbalanced datasets using contrastive learning.</li>
           </ul>
         </div>
       </div>
@@ -953,6 +971,11 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script>
     // Mobile Menu Toggle
     const menuBtn = document.getElementById('menuBtn');
@@ -999,6 +1022,25 @@
 
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
+    });
+
+    // Back to Top Button Logic
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    }
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
